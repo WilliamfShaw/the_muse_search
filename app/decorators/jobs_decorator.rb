@@ -1,0 +1,2 @@
+class JobsDecorator < ApplicationDecorator
+end
