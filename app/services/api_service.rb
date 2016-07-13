@@ -1,6 +1,4 @@
-class Muse
-  BASE_URL = "https://api-v2.themuse.com/jobs?".freeze
-
+class ApiService
   def initialize(keys: {})
     @keys = keys
   end
@@ -19,10 +17,6 @@ class Muse
   attr_reader :records, :keys
 
   def fetch
-    @records = Typhoeus.get(request_url)
-  end
-
-  def request_url
-    BASE_URL + keys.merge(api_key: ENV["MUSE_API_KEY"]).to_query
+    fail NotImplementedError, "Inheriting class must implement '#fetch'"
   end
 end

@@ -8,9 +8,11 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'foundation-rails'
 gem 'kaminari'
-gem 'typhoeus'
+gem 'httparty'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'dalli'
+gem 'responders', '~> 2.0'
 
 group :development, :test do
   gem 'pry-rails'
