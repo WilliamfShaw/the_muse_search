@@ -6,16 +6,35 @@
 .row
   .container
     .col-md-3
-      Level:
-      = select_tag(:level_select, options_for_select(MuseJobPresenter::LEVEL.values, selected: params[:level]), prompt: "Sort by Level")
+      .row
+        Level:
+        = select_tag(:level_select, options_for_select(MuseJobPresenter::LEVEL.values, selected: params[:level]), prompt: "Sort by Level")
+      %br
+      .row
+        Order:
+        = select_tag(:order_select, options_for_select([["Ascending", false], ["Descending", true]], selected: params[:order]), prompt: "Order")
     .col-md-4
-      Location:
-      = select_tag(:location_select, options_for_select(MuseJobPresenter::LOCATIONS.values, selected: params[:location]), prompt: "Popular Locations")
+      .row
+        Location:
+        = select_tag(:location_select, options_for_select(MuseJobPresenter::LOCATIONS.values, selected: params[:location]), prompt: "Popular Locations")
+      %br
+      .row
+        Catergory:
+        = select_tag(:catergory_select, options_for_select(MuseJobPresenter::CATERGORIES.values, selected: params[:category]), prompt: "Popular Catergories")
     .col-md-4
-      Catergory:
-      = select_tag(:catergory_select, options_for_select(MuseJobPresenter::CATERGORIES.values, selected: params[:category]), prompt: "Popular Catergories")
     .col-md-1
       = link_to "Clear", root_path, class: "btn btn-danger btn-xs pull-right"
+
+%br
+
+.container
+  .row
+    %form#title
+      .col-md-9
+        %input.form-control{ type: "text", placeholder: "Search by Company ex: Warby Parker, The Muse, Google, etc", value: params[:title] }
+      .col-md-3
+        = submit_tag "Search", class: "btn btn-default btn-sm", title: "Search"
+
 
 %br
 
@@ -70,6 +89,17 @@
       var catergory = $('#catergory_select option:selected').val().trim();
       updateFilters('catergory', catergory);
     });
+
+    $('#order_select').change(function () {
+      var order = $('#order_select option:selected').val().trim();
+      updateFilters('descending', order);
+    });
+
+    $('#title').on('submit', function(e) {
+      e.preventDefault();
+      var company = $(this).find("input[type='text']").val();
+      updateFilters('company', company);
+    })
 
     $('#next').click(function () {
       var page = $('#next').val();

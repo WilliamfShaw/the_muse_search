@@ -8,7 +8,7 @@ class JobsController < ApplicationController
   private
 
   def search_params
-    params.permit(:page, :category, :location, :level).merge(page: page)
+    params.permit(:page, :category, :location, :level, :company, :descending).merge(page: page)
   end
 
   def page
