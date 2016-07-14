@@ -33,9 +33,9 @@ rspec --format documentation
 ```
 ## Running locally
 
+This application uses `dalli` to cache results using a local memcached server. If you do not have memcached already running, in a seperate terminal window run `memcached`, then run the command below in seperate terminal window 
+
 ```
 rails s
 
 ```
-
-This application uses `dalli` to cache results using a local memcache server. If you do not have memcache running as a background dameon, in a seperate terminal window run `memcache`
