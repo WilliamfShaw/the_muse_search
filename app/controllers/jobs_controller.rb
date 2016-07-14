@@ -2,7 +2,7 @@ class JobsController < ApplicationController
   def index
     @search_result = JSON.parse(Muse::Jobs.call(search_params))
     @jobs = @search_result["results"].map { |job| MuseJob.new(params: job) }.map(&JobsDecorator)
-    @presenter = MuseJobPresenter.new(page, @search_result["page_count"])
+    @presenter = MuseJobPresenter.new(page, @search_result.dig("page_count"))
   end
 
   private

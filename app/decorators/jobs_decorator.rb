@@ -1,6 +1,6 @@
 class JobsDecorator < ApplicationDecorator
   def company_name
-    company["name"]
+    company.dig("name")
   end
 
   def location_name
@@ -12,7 +12,7 @@ class JobsDecorator < ApplicationDecorator
   end
 
   def all_categories
-    categories.map { |c| c["name"] }
+    categories.map { |c| c.dig("name") }
   end
 
   def date_published
