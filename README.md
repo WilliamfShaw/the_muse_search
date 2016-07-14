@@ -19,6 +19,12 @@ bin/setup
 
 ```
 
+**YOUR WILL NEED TO SET YOUR MUSE API KEY**
+
+- visit [THE MUSE DEVELOPERS PAGE](https://www.themuse.com/developers)
+- Sign up a new application and get an api key
+- Paste the api key in the `.env` file next to `MUSE_API_KEY`
+
 ## Tests
 
 ```
