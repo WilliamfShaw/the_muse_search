@@ -5,7 +5,7 @@ This is a simple rails application with aims to make use of the `jobs` endpoint 
 ## Requirements
 
 - Ruby '2.3.0'
-- Memcache `will install with bin/setup`
+- Memcache `gem install memcached`
 - Rails
 - Postgres (9.4+)
 
