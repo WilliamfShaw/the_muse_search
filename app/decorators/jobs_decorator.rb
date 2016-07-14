@@ -8,7 +8,7 @@ class JobsDecorator < ApplicationDecorator
   end
 
   def muse_url
-    refs["landing_page"]
+    refs.dig("landing_page")
   end
 
   def all_categories
