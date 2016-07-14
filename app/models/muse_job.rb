@@ -1,6 +1,5 @@
 class MuseJob
-  attr_reader :id, :short_name, :categories, :levels, :refs, :model_type, :type, :contents, :name,
-    :company, :locations, :tags, "publication_date"
+  attr_reader :categories, :levels, :refs, :name, :company, :locations, :publication_date
 
   def initialize(params: {})
     @categories = params["categories"]
