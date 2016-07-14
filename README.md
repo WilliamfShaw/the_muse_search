@@ -14,7 +14,7 @@ This is a simple rails application with aims to make use of the `jobs` endpoint 
 
 ```
 git clone git@github.com:WilliamfShaw/the_muse_search.git
-cd the_muse
+cd the_muse_search
 bin/setup
 
 ```
