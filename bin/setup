@@ -10,11 +10,13 @@ Dir.chdir APP_ROOT do
 
   puts "== Installing dependencies =="
   system "gem install bundler --conservative"
-  system "gem install memcache"
   system "bundle check || bundle install"
 
   puts "\n== Copying ENV =="
   system "cp .env.example .env"
+
+  puts "\n== Copying secrets =="
+  system "cp config/secrets.yml.example config/secrets.yml"
 
   puts "\n== Preparing database =="
   system "bin/rake db:setup"
