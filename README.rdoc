@@ -1,28 +1,35 @@
-== README
+## The Muse Job Search
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple rails application with aims to make use of the `jobs` endpoint supplied by [The Muse](https://www.themuse.com/)
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Ruby '2.3.0'
+- Memcache `will install with bin/setup`
+- Rails
+- Postgres (9.4+)
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## Setup
+
+```
+git clone git@github.com:WilliamfShaw/the_muse_search.git
+cd the_muse
+bin/setup
+
+```
+
+## Tests
+
+```
+rspec --format documentation
+
+```
+## Running locally
+
+```
+rails s
+
+```
+
+This application uses `dalli` to cache results using a local memcache server. If you do not have memcache running as a background dameon, in a seperate terminal window run `memcache`
