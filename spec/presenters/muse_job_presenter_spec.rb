@@ -6,13 +6,13 @@ describe MuseJobPresenter do
   describe "#next?" do
     subject(:next?) { presenter.next? }
 
-    context "when page is less than limit -1" do
+    context "when page is less than (limit - 1)" do
       let(:params) { { page: 1, limit: 100 } }
 
       it { is_expected.to eq(true) }
     end
 
-    context "when page is greater than limit -1" do
+    context "when page is greater than (limit - 1)" do
       let(:params) { { page: 99, limit: 100 } }
 
       it { is_expected.to eq(false) }
@@ -22,13 +22,13 @@ describe MuseJobPresenter do
   describe "#next_page" do
     subject(:next_page) { presenter.next_page }
 
-    context "when page is less than limit -1" do
+    context "when page is less than (limit - 1)" do
       let(:params) { { page: 1, limit: 100 } }
 
       it { is_expected.to eq(2) }
     end
 
-    context "when page is greater than limit -1" do
+    context "when page is greater than (limit - 1)" do
       let(:params) { { page: 99, limit: 100 } }
 
       it { is_expected.to eq(99) }
