@@ -4,7 +4,7 @@ class Muse::Jobs < ApiService
   private
 
   def fetch
-    @records = Rails.cache.fetch(request_url, expires_in: 3.minutes) do
+    @records = Rails.cache.fetch(request_url, expires_in: 3.hours) do
       request
     end
   end
