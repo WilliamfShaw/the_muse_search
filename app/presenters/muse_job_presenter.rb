@@ -24,7 +24,7 @@ class MuseJobPresenter
 
   attr_reader :page, :limit
 
-  def initialize(page, limit)
+  def initialize(page:, limit:)
     @page = page.to_i
     @limit = limit
   end
