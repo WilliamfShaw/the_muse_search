@@ -37,7 +37,7 @@ This application uses `dalli` to cache results using a local memcached server. I
 
 **Note**
 
-This will work without memcached running, however you may exceed rate limits with excessive usage. rails 
+This will work without memcached running, however you may exceed rate limits with excessive usage.
 
 ```
 rails s
